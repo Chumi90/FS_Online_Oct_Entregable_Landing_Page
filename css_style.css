@@ -5,44 +5,65 @@
     height: 97.5px; /*La imagen tiene una altura de 260px*/
 }
 
-
-.head ul {
+.head ul{
     display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: space-between;
+    flex-direction: row; /*Hacemos que tanto la imagen como el menú se vea en horizontal*/
+    align-items: center; /*Centro los huecos del contenido*/
+    justify-content: space-between; /*Dejo espacios para todo el largo*/
     gap: 20px;
-    padding-right: 250px;
+    padding-right: 250px; /*Dejo un espacio a la derecha para que se pueda insertar el idioma*/
+}
+li:nth-child(2) {
+    display: none; /*Oculatmos una etiqueta menú para cuando la tengamos la visión móvil*/
 }
  
 li {
-    list-style: none;
+    list-style: none; /*Oculto los bullets points*/
 }
 a {
-    text-decoration: none;
-    color: rgb(74, 199, 197);
-    margin-top: 100px;
+    text-decoration: none; /*None decorations of text*/
+    color: rgb(74, 199, 197); /*Change color of menu*/
+    margin-top: 100px; /*center and pull down the menu with image principal*/
 }
-
 
 .fondo {
     display: flex;
     justify-content:center;
-    /*background-image: url("img/sk_fondo.jpg"); /*No funciona cuando introduzco la imagen como fondo, aparece el fondo en blanco*/
-    width: 100%;
-    height: 100%;
+    background-image: url('../FS_Online_Oct_Entregable_Landing_Page/img/sk_fondo.jpg'); /*No funciona cuando introduzco la imagen como fondo, aparece el fondo en blanco*/
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
     filter: brightness(70%);
 }
 
-@media screen and (max-width:480px){
-    .head ul{
-        display: flex;
-        flex-direction: column;
+@media (max-width:1000px){ /*Cambiar a 480px, para probar utilizo una ventana más grande*/
+    li:nth-child(2) {
+        display:inline; /*Hacemos que se vea la lista Menú para cuando es menos de 480px*/
     }
+    ul:nth-child(-n+2){/*Hacemos que tengamos en columna 2 espacios pero me co*/
+        display: flex;
+        flex-direction: column; /*Hacemos que la lista se invierta para que el menú sea lo primero*/
+        align-items: flex-start;
+        justify-content: flex-start; /*Hacemos que esté al inicio*/
+        gap: 0px; /*Dejamos un espacio para su usabilidad*/
+    }
+    ul li:nth-child(-n+1){/*Seleccionamos el <li> donde se encuentra la imagen*/
+        margin-left: 45%; /*Desplazamos la imagen para que quede cenrtada*/
+    }
+    ul li:nth-child(n+3){/*Seleccionamos los <li> que no queremos mostrar desde el último hasta el 3 <li>*/
+        display: none;/*Ocultamos el menú*/
+    }
+    ul:hover li:nth-child(n+3) { /*Mostramos al pasar sombre Menú Seleccionamos los <li> que no queremos mostrar desde el último hasta el 3 <li>*/
+        display: block; /*Mostramos el menú*/
+    }
+    .logo_1{ /*El logo del menú lo ajustamos para que no crezca con la imagen a un tamaño definido para que se vea bien*/
+        margin-left: 50%; //*Hacemos que la imagen se centre en la ventana*/
+    }
+
     .fondo{
         display: flex;
         justify-content: center;
-        background-image: url("img/referencia-sk02_responsive.jpg"); /*Si no funciona el anterior este tampoco*/
+        background-image: url("../FS_Online_Oct_Entregable_Landing_Page/img/referencia-sk02_responsive.jpg"); /*Si no funciona el anterior este tampoco*/
         width: auto;
         height: auto;
         filter: brightness(70%);
