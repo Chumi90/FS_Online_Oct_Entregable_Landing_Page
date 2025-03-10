@@ -34,6 +34,38 @@ a {
     background-size: cover;
     background-position: center;
     filter: brightness(70%);
+    min-height: 900px; /*con estas dos ultimas lineas se soluciona, puedes ajustar el tamano a lo que pide el ejercicio, y asi puedes quitar la imagen del HTML (aunque meterla en el HTML tambien es una solucion)*/
+    width: 100%; 
+}
+
+.circle {
+    background-color: transparent;
+    position: fixed;
+    top: 90%;
+    left: 70%;
+    z-index: 200;
+}
+.circle ul{
+    list-style: none;
+    cursor:pointer; 
+    cursor: hand;
+    display: inline-block;
+
+}
+.circle ul li {
+    float: none;
+    content: '';
+    position: relative;
+    float: left;
+    width: 15px;
+    height: 15px;
+    border-radius: 15px;
+    background-color: transparent;
+    margin: 20px 20px;
+    z-index: 10;
+    border: solid 4px white;
+    left: 85%;
+    box-sizing: content-box;
 }
 
 @media (max-width:1000px){ /*Cambiar a 480px, para probar utilizo una ventana más grande*/
@@ -46,6 +78,7 @@ a {
         align-items: flex-start;
         justify-content: flex-start; /*Hacemos que esté al inicio*/
         gap: 0px; /*Dejamos un espacio para su usabilidad*/
+        z-index: 200;
     }
     ul li:nth-child(-n+1){/*Seleccionamos el <li> donde se encuentra la imagen*/
         margin-left: 45%; /*Desplazamos la imagen para que quede cenrtada*/
@@ -55,17 +88,54 @@ a {
     }
     ul:hover li:nth-child(n+3) { /*Mostramos al pasar sombre Menú Seleccionamos los <li> que no queremos mostrar desde el último hasta el 3 <li>*/
         display: block; /*Mostramos el menú*/
+        background-color: rgb(36, 9, 9);
+        background-size: 150px;
     }
     .logo_1{ /*El logo del menú lo ajustamos para que no crezca con la imagen a un tamaño definido para que se vea bien*/
         margin-left: 50%; //*Hacemos que la imagen se centre en la ventana*/
     }
-
+    .head{
+        background-color: transparent;
+        position: fixed;
+        z-index: 4;
+    }
     .fondo{
         display: flex;
         justify-content: center;
-        background-image: url("../FS_Online_Oct_Entregable_Landing_Page/img/referencia-sk02_responsive.jpg"); /*Si no funciona el anterior este tampoco*/
-        width: auto;
-        height: auto;
+        background-position-y: 150px;
+        background-image: url('../FS_Online_Oct_Entregable_Landing_Page/img/sk_fondo.jpg'); /*Si no funciona el anterior este tampoco*/
+        min-height: 700px; /*con estas dos ultimas lineas se soluciona, puedes ajustar el tamano a lo que pide el ejercicio, y asi puedes quitar la imagen del HTML (aunque meterla en el HTML tambien es una solucion)*/
+        width: 100%; 
         filter: brightness(70%);
+    }
+
+    .circle {
+        background-color: transparent;
+        position: fixed;
+        top: 90%;
+        left: 10%;
+        z-index: 200;
+    }
+    .circle ul{
+        list-style: none;
+        cursor:pointer; 
+        cursor: hand;
+        display: inline-block;
+    
+    }
+    .circle ul li {
+        float: none;
+        content: '';
+        position: relative;
+        float: left;
+        width: 10px;
+        height: 10px;
+        border-radius: 10px;
+        background-color: transparent;
+        margin: 10px 10px;
+        z-index: 10;
+        border: solid 4px white;
+        left: 5%;
+        box-sizing: content-box;
     }
 }
